@@ -38,7 +38,7 @@ class _WebVideoPlayerState extends State<WebVideoPlayer> {
   var showControls = ValueNotifier(true);
   var isFirstLaunch = true;
   var isBrowserFullScreen = true;
-  late Timer _timer;
+  Timer? _timer;
 
   @override
   void initState() {
@@ -59,9 +59,9 @@ class _WebVideoPlayerState extends State<WebVideoPlayer> {
       }
     });
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
-      if (DateTime.now().millisecondsSinceEpoch > 5000) {
+      if (timer.tick > 3) {
         showControls.value = false;
-        _timer.cancel();
+        _timer?.cancel();
       }
     });
     WidgetsBinding.instance.addPostFrameCallback((_) async {
@@ -112,6 +112,12 @@ class _WebVideoPlayerState extends State<WebVideoPlayer> {
               onTap: () {
                 setState(() {
                   showControls.value = true;
+                  _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+                    if (timer.tick > 3) {
+                      showControls.value = false;
+                      _timer?.cancel();
+                    }
+                  });
                 });
               },
             ),

@@ -7,7 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:universal_html/html.dart' as html;
 import 'package:video_player/video_player.dart';
 
-class NewVideoPLayer extends StatefulWidget {
+class WebVideoPLayer extends StatefulWidget {
   final String url;
   final String? thumbnailUrl;
   final bool isFullscreen;
@@ -17,7 +17,7 @@ class NewVideoPLayer extends StatefulWidget {
   final VideoPlayerController videoController;
   final Duration? seekDuration;
 
-  const NewVideoPLayer({
+  const WebVideoPLayer({
     Key? key,
     required this.url,
     this.thumbnailUrl,
@@ -30,10 +30,10 @@ class NewVideoPLayer extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<NewVideoPLayer> createState() => _NewVideoPLayerState();
+  State<WebVideoPLayer> createState() => _WebVideoPLayerState();
 }
 
-class _NewVideoPLayerState extends State<NewVideoPLayer> {
+class _WebVideoPLayerState extends State<WebVideoPLayer> {
   late VideoPlayerController _controller;
   var showControls = ValueNotifier(true);
   var isFirstLaunch = true;
@@ -187,7 +187,7 @@ class _NewVideoPLayerState extends State<NewVideoPLayer> {
                             barrierDismissible: true,
                             builder: (BuildContext context) {
                               return Material(
-                                child: NewVideoPLayer(
+                                child: WebVideoPLayer(
                                   url: widget.url,
                                   thumbnailUrl: widget.thumbnailUrl,
                                   videoController: widget.videoController,

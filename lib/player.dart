@@ -102,6 +102,20 @@ class _WebVideoPlayerState extends State<WebVideoPlayer> {
                 child: VideoPlayer(_controller),
               )
             : Container(),
+        if(!showControls.value)
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            child: InkWell(
+              onTap: () {
+                setState(() {
+                  showControls.value = true;
+                });
+              },
+            ),
+          ),
         AnimatedOpacity(
           opacity:
               (_controller.value.isInitialized && showControls.value) ? 1 : 0,

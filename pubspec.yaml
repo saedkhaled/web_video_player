@@ -1,6 +1,7 @@
 name: web_video_player
 description: A Flutter Web Video Player
 version: 0.0.1
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 homepage:
 
 environment:

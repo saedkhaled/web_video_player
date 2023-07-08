@@ -52,4 +52,7 @@ final playerWidget = WebVideoPlayer( controller: controller );
 
 ## Additional information
 
-You can check out the [example]('https://github.com/saedkhaled/web_video_player/tree/main/lib/example') directory for a sample application using this package.
+You can check out the [example]('https://github.com/saedkhaled/web_video_player/tree/main/example') directory for a sample application using this package.
+
+## License
+web_video_player is licensed under the New BSD License check the [License]('https://github.com/saedkhaled/web_video_player/blob/main/LICENSE') for more details.

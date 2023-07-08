@@ -4,7 +4,7 @@ and the [`universal_html`](https://github.com/dint-dev/universal_html) plugin to
 
 ## Features
 
-- Supports MP4, and WAV video formats.
+- Supports MP4, and MOV video formats.
 - Supports video playback from local assets, and remote URLs.
 - Supports video playback in full screen mode.
 - Play, Pause, Mute, Unmute, Seek to, and Fullscreen controls.
@@ -48,7 +48,6 @@ import 'package:video_player/video_player.dart';
 final controller = VideoPlayerController.network( url );
 final playerWidget = WebVideoPlayer( controller: controller );
 ```
-
 
 ## Additional information
 

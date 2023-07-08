@@ -1,39 +1,55 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
-
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A simple, intuitive, and efficient video player package designed specifically for Flutter Web applications. 
+This package enables seamless video playback directly in your web application using the [`video_player`](https://pub.dartlang.org/packages/video_player) package,
+and the [`universal_html`](https://github.com/dint-dev/universal_html) plugin to manage the browser.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Supports MP4, and WAV video formats.
+- Supports video playback from local assets, and remote URLs.
+- Supports video playback in full screen mode.
+- Play, Pause, Mute, Unmute, Seek to, and Fullscreen controls.
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+To use this package, add web_video_player as a dependency in your pubspec.yaml file.
 
-## Usage
+## Installation
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+In your `pubspec.yaml` file within your Flutter Project add `web_video_player` and `video_player` under dependencies:
 
-```dart
-const like = 'sample';
+```yaml
+dependencies:
+  web_video_player: <latest_version>
+  video_player: <latest_version>
 ```
+
+## Using it
+
+- You can initialize the player by passing in a URL to the video file
+```dart
+import 'package:web_video_player/web_video_player.dart';
+
+final playerWidget = WebVideoPlayer( url: url );
+```
+
+- Or you can also initialize it by passing in a local asset path to the video file
+```dart
+import 'package:web_video_player/web_video_player.dart';
+
+final playerWidget = WebVideoPlayer( path: 'assets/videos/example.mp4' );
+```
+
+
+- Another way to initialize the player is by passing in a `VideoPlayerController` object so you can have more control over the video playback.
+```dart
+import 'package:web_video_player/web_video_player.dart';
+import 'package:video_player/video_player.dart';
+
+final controller = VideoPlayerController.network( url );
+final playerWidget = WebVideoPlayer( controller: controller );
+```
+
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+You can check out the [example]('https://github.com/saedkhaled/web_video_player/tree/main/lib/example') directory for a sample application using this package.

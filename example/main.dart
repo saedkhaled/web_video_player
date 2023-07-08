@@ -27,7 +27,7 @@ class MyHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Media Collection Previewer'),
+        title: const Text('Web Video Player'),
       ),
       body: const Center(
         child: Column(

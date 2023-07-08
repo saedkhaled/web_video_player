@@ -9,6 +9,7 @@ import 'package:video_player/video_player.dart';
 
 import 'utils.dart';
 
+
 /// A widget that displays a simple video player for web platform.
 class WebVideoPlayer extends StatefulWidget {
 

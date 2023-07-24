@@ -130,10 +130,10 @@ class _WebVideoPlayerState extends State<WebVideoPlayer> {
                     valueListenable: _controller,
                     builder: (ctx, val, child) => Icon(
                       val.isPlaying
-                          ? CupertinoIcons.pause
-                          : CupertinoIcons.play_arrow,
-                      size: 50,
-                      color: CupertinoColors.white,
+                          ? Icons.pause
+                          : Icons.play_arrow,
+                      size: 40,
+                      color: Colors.white,
                     ),
                   ),
                 ),
@@ -160,9 +160,9 @@ class _WebVideoPlayerState extends State<WebVideoPlayer> {
                         valueListenable: _controller,
                         builder: (ctx, val, child) => Icon(
                           val.isPlaying
-                              ? CupertinoIcons.pause
-                              : CupertinoIcons.play_arrow,
-                          color: CupertinoColors.white,
+                              ? Icons.pause
+                              : Icons.play_arrow,
+                          color: Colors.white,
                         ),
                       ),
                       onPressed: () => _onPlayPress(),
@@ -177,8 +177,8 @@ class _WebVideoPlayerState extends State<WebVideoPlayer> {
                     ),
                     CupertinoButton(
                       child: const Icon(
-                        CupertinoIcons.fullscreen,
-                        color: CupertinoColors.white,
+                        Icons.fullscreen,
+                        color: Colors.white,
                       ),
                       onPressed: () => _switchFullScreen(),
                     ),
